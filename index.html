@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Clone || Rittam Saha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="shortcut icon"
+      href="./assets/youtube favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="h-screen w-screen bg-[#FFFFFF] overflow-x-hidden">
+    <!-- all content -->
+    <div class="flex">
+      <!-- left side bar -->
+      <div class="flex flex-col w-20 h-screen items-center gap-y-2">
+        <!-- Hamburger icon -->
+        <div
+          class="w-10 relative top-6 rounded-full hover:bg-[#F0F0F0] h-10 flex justify-center items-center cursor-pointer transition-all duration-300 ease-in-out"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            focusable="false"
+            style="
+              pointer-events: none;
+              display: block;
+              width: 60%;
+              height: 100%;
+            "
+          >
+            <path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path>
+          </svg>
+        </div>
+        <!-- home icon -->
+        <div
+          class="h-20 w-20 mt-8 hover:bg-[#F0F0F0] flex flex-col justify-center items-center rounded-2xl cursor-pointer transition-all duration-300 ease-in-out"
+        >
+          <svg
+            enable-background="new 0 0 24 24"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            focusable="false"
+            style="
+              pointer-events: none;
+              display: block;
+              width: 50%;
+              height: 50%;
+            "
+          >
+            <g>
+              <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
+            </g>
+          </svg>
+          <div class="text-[0.65rem] font-semibold">Home</div>
+        </div>
+        <!-- shorts icon -->
+        <div
+          class="h-20 w-20 hover:bg-[#F0F0F0] flex flex-col justify-center items-center rounded-2xl cursor-pointer transition-all duration-300 ease-in-out"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            focusable="false"
+            style="
+              pointer-events: none;
+              display: block;
+              width: 50%;
+              height: 50%;
+            "
+          >
+            <path
+              d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z"
+            ></path>
+          </svg>
+          <div class="text-[0.65rem] font-semibold">Shorts</div>
+        </div>
+        <!-- Subscriptions icon -->
+        <div
+          class="h-20 w-20 hover:bg-[#F0F0F0] flex flex-col justify-center items-center rounded-2xl cursor-pointer transition-all duration-300 ease-in-out"
+        >
+          <svg
+            enable-background="new 0 0 24 24"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            focusable="false"
+            style="
+              pointer-events: none;
+              display: block;
+              width: 50%;
+              height: 50%;
+            "
+          >
+            <path
+              d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"
+            ></path>
+          </svg>
+          <div class="text-[0.65rem] font-semibold">Subscriptions</div>
+        </div>
+        <!-- Library icon -->
+        <div
+          class="h-20 w-20 hover:bg-[#F0F0F0] flex flex-col justify-center items-center rounded-2xl cursor-pointer transition-all duration-300 ease-in-out"
+        >
+          <svg
+            enable-background="new 0 0 24 24"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            focusable="false"
+            style="
+              pointer-events: none;
+              display: block;
+              width: 50%;
+              height: 50%;
+            "
+          >
+            <path
+              d="m11 7 6 3.5-6 3.5V7zm7 13H4V6H3v15h15v-1zm3-2H6V3h15v15zM7 17h13V4H7v13z"
+            ></path>
+          </svg>
+          <div class="text-[0.65rem] font-semibold">Library</div>
+        </div>
+      </div>
+      <!-- right side -->
+      <div class="flex flex-col w-full gap-4">
+        <!-- top bar -->
+        <div class="flex h-20 items-center justify-between">
+          <!-- youtube logo -->
+          <div class="cursor-pointer">
+            <img src="./assets/youtubeLogo.png" alt="" class="h-6 w-24" />
+          </div>
+          <!-- search bar and microphone -->
+          <div class="flex gap-x-3 items-center">
+            <!-- search -->
+            <div
+              class="flex border-[1px] rounded-3xl border-gray-300 w-[613px]"
+            >
+              <!-- search bar -->
+              <div>
+                <input
+                  type="search"
+                  name=""
+                  id=""
+                  placeholder="Search"
+                  class="h-10 w-[530px] border-none focus:outline-none p-1 ml-5"
+                />
+              </div>
+              <!-- search icon -->
+              <button
+                class="bg-gray-50 hover:bg-gray-100 py-2 px-5 rounded-tr-3xl rounded-br-3xl border-l"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <!-- microphone -->
+            <div
+              class="h-10 w-10 flex justify-center items-center bg-gray-200 hover:bg-gray-300 rounded-full cursor-pointer transition-all duration-200 ease-in-out"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.8"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- right section header -->
+          <div class="flex gap-x-5">
+            <!-- create video -->
+            <button
+              class="h-10 w-10 flex justify-center items-center hover:bg-gray-200 rounded-full cursor-pointer transition-all duration-200 ease-in-out"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.8"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
+                />
+              </svg>
+            </button>
+            <!-- Notification bell -->
+            <button
+              class="h-10 w-10 flex justify-center items-center hover:bg-gray-200 rounded-full cursor-pointer transition-all duration-200 ease-in-out"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                />
+              </svg>
+            </button>
+            <!-- profile picture -->
+            <div class="h-11 w-11 mr-7">
+              <img
+                src="./assets/Rittam Saha image1.jpg"
+                alt=""
+                class="rounded-full cursor-pointer"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- catagory option -->
+        <div class="ml-8 flex gap-3">
+          <div
+            class="text-white bg-black w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            All
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            React router
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Web development
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Lectures
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            AI
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Music
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Algorithm
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Live
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Satsang
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Live
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Bollywood
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Hindi Music
+          </div>
+          <div
+            class="text-black bg-[#F0F0F0] hover:bg-[#e5e5e5] w-fit px-3 py-1 rounded-lg cursor-pointer"
+          >
+            Laptop
+          </div>
+        </div>
+        <!-- All video content -->
+        <div class="ml-8 mt-1 flex flex-wrap gap-x-5 gap-y-10">
+          <div class="group relative">
+            <iframe
+              class="rounded-xl"
+              width="360"
+              height="210"
+              src="https://www.youtube.com/embed/973M8obx7iM?si=CjiCW189SoJ_gvWA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <!-- video content description-->
+            <div class="flex gap-5 cursor-pointer">
+              <!-- channel logo -->
+              <div>
+                <img
+                  src="./assets/gopal bhar.jpg"
+                  alt=""
+                  class="rounded-full cursor-pointer h-11 w-11 mt-3"
+                />
+              </div>
+              <div>
+                <!-- video description -->
+                <div class="flex flex-col">
+                  <h1 class="mt-2 font-semibold text-lg">
+                    Durga Puja Special - Gopal Bhar <br />
+                    Best of 2024
+                  </h1>
+                  <p class="text-gray-600 text-sm font-semibold">Gopal Bhar</p>
+                  <div class="flex">
+                    <div
+                      class="text-gray-600 text-sm font-semibold flex gap-3 items-center"
+                    >
+                      100k views
+                      <!-- div for dot -->
+                      <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                      10 days ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="hidden group-hover:block absolute left-[330px] top-56">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="group relative">
+            <iframe
+              class="rounded-xl"
+              width="360"
+              height="210"
+              src="https://www.youtube.com/embed/973M8obx7iM?si=CjiCW189SoJ_gvWA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <!-- video content description-->
+            <div class="flex gap-5 cursor-pointer">
+              <!-- channel logo -->
+              <div>
+                <img
+                  src="./assets/gopal bhar.jpg"
+                  alt=""
+                  class="rounded-full cursor-pointer h-11 w-11 mt-3"
+                />
+              </div>
+              <div>
+                <!-- video description -->
+                <div class="flex flex-col">
+                  <h1 class="mt-2 font-semibold text-lg">
+                    Durga Puja Special - Gopal Bhar <br />
+                    Best of 2024
+                  </h1>
+                  <p class="text-gray-600 text-sm font-semibold">Gopal Bhar</p>
+                  <div class="flex">
+                    <div
+                      class="text-gray-600 text-sm font-semibold flex gap-3 items-center"
+                    >
+                      100k views
+                      <!-- div for dot -->
+                      <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                      10 days ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="hidden group-hover:block absolute left-[330px] top-56">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="group relative">
+            <iframe
+              class="rounded-xl"
+              width="360"
+              height="210"
+              src="https://www.youtube.com/embed/973M8obx7iM?si=CjiCW189SoJ_gvWA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <!-- video content description-->
+            <div class="flex gap-5 cursor-pointer">
+              <!-- channel logo -->
+              <div>
+                <img
+                  src="./assets/gopal bhar.jpg"
+                  alt=""
+                  class="rounded-full cursor-pointer h-11 w-11 mt-3"
+                />
+              </div>
+              <div>
+                <!-- video description -->
+                <div class="flex flex-col">
+                  <h1 class="mt-2 font-semibold text-lg">
+                    Durga Puja Special - Gopal Bhar <br />
+                    Best of 2024
+                  </h1>
+                  <p class="text-gray-600 text-sm font-semibold">Gopal Bhar</p>
+                  <div class="flex">
+                    <div
+                      class="text-gray-600 text-sm font-semibold flex gap-3 items-center"
+                    >
+                      100k views
+                      <!-- div for dot -->
+                      <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                      10 days ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="hidden group-hover:block absolute left-[330px] top-56">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="group relative">
+            <iframe
+              class="rounded-xl"
+              width="360"
+              height="210"
+              src="https://www.youtube.com/embed/973M8obx7iM?si=CjiCW189SoJ_gvWA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <!-- video content description-->
+            <div class="flex gap-5 cursor-pointer">
+              <!-- channel logo -->
+              <div>
+                <img
+                  src="./assets/gopal bhar.jpg"
+                  alt=""
+                  class="rounded-full cursor-pointer h-11 w-11 mt-3"
+                />
+              </div>
+              <div>
+                <!-- video description -->
+                <div class="flex flex-col">
+                  <h1 class="mt-2 font-semibold text-lg">
+                    Durga Puja Special - Gopal Bhar <br />
+                    Best of 2024
+                  </h1>
+                  <p class="text-gray-600 text-sm font-semibold">Gopal Bhar</p>
+                  <div class="flex">
+                    <div
+                      class="text-gray-600 text-sm font-semibold flex gap-3 items-center"
+                    >
+                      100k views
+                      <!-- div for dot -->
+                      <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                      10 days ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="hidden group-hover:block absolute left-[330px] top-56">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="group relative">
+            <iframe
+              class="rounded-xl"
+              width="360"
+              height="210"
+              src="https://www.youtube.com/embed/973M8obx7iM?si=CjiCW189SoJ_gvWA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <!-- video content description-->
+            <div class="flex gap-5 cursor-pointer">
+              <!-- channel logo -->
+              <div>
+                <img
+                  src="./assets/gopal bhar.jpg"
+                  alt=""
+                  class="rounded-full cursor-pointer h-11 w-11 mt-3"
+                />
+              </div>
+              <div>
+                <!-- video description -->
+                <div class="flex flex-col">
+                  <h1 class="mt-2 font-semibold text-lg">
+                    Durga Puja Special - Gopal Bhar <br />
+                    Best of 2024
+                  </h1>
+                  <p class="text-gray-600 text-sm font-semibold">Gopal Bhar</p>
+                  <div class="flex">
+                    <div
+                      class="text-gray-600 text-sm font-semibold flex gap-3 items-center"
+                    >
+                      100k views
+                      <!-- div for dot -->
+                      <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                      10 days ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="hidden group-hover:block absolute left-[330px] top-56">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="group relative">
+            <iframe
+              class="rounded-xl"
+              width="360"
+              height="210"
+              src="https://www.youtube.com/embed/973M8obx7iM?si=CjiCW189SoJ_gvWA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <!-- video content description-->
+            <div class="flex gap-5 cursor-pointer">
+              <!-- channel logo -->
+              <div>
+                <img
+                  src="./assets/gopal bhar.jpg"
+                  alt=""
+                  class="rounded-full cursor-pointer h-11 w-11 mt-3"
+                />
+              </div>
+              <div>
+                <!-- video description -->
+                <div class="flex flex-col">
+                  <h1 class="mt-2 font-semibold text-lg">
+                    Durga Puja Special - Gopal Bhar <br />
+                    Best of 2024
+                  </h1>
+                  <p class="text-gray-600 text-sm font-semibold">Gopal Bhar</p>
+                  <div class="flex">
+                    <div
+                      class="text-gray-600 text-sm font-semibold flex gap-3 items-center"
+                    >
+                      100k views
+                      <!-- div for dot -->
+                      <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                      10 days ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="hidden group-hover:block absolute left-[330px] top-56">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
